@@ -603,7 +603,7 @@ export default function App() {
             <BentoCard className="md:col-span-2 justify-between bg-[var(--color-surface)]" delay={0.1}>
               <div className="relative h-48 md:h-64 -mx-8 md:-mx-10 -mt-8 md:-mt-10 mb-8 overflow-hidden shrink-0 group/cover border-b border-ink/10">
                 <img 
-                  src="/Cover%20Image.jpg" 
+src={`${import.meta.env.BASE_URL}Cover%20Image.jpg`}
                   alt="Cover" 
                   className="w-full h-full object-cover filter grayscale opacity-60 group-hover/cover:grayscale-0 group-hover/cover:opacity-100 transition-all duration-1000 group-hover/cover:scale-105"
                   referrerPolicy="no-referrer"
@@ -651,7 +651,7 @@ export default function App() {
             <BentoCard className="flex flex-col group !p-0 overflow-hidden bg-[var(--color-surface)]" delay={0.2}>
               <div className="h-64 lg:h-72 w-full relative overflow-hidden bg-ink/5 shrink-0">
                 <img 
-                  src="/Profile.png" 
+src={`${import.meta.env.BASE_URL}Profile.png`}
                   alt="Ar. Koushik Narayanan"
                   className="w-full h-full object-cover object-top transition-transform duration-1000 group-hover:scale-105 filter grayscale opacity-70 group-hover:opacity-100 group-hover:grayscale-0 relative z-10"
                   referrerPolicy="no-referrer"
