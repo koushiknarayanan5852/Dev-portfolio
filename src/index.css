@@ -1,0 +1,98 @@
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --color-paper: #09090b; /* Deep Void */
+  --color-surface: #131316; /* Raised Dark Surface */
+  --color-ink: #f8fafc; /* Crisp White Text */
+  --color-border: #27272a; /* Structural Lines */
+  --color-accent: #00e5ff; /* Neon Cyan */
+
+  --font-sans: "Space Grotesk", ui-sans-serif, system-ui, sans-serif;
+  --font-serif: "Space Grotesk", ui-sans-serif, system-ui, sans-serif;
+  --font-mono: "Space Grotesk", ui-sans-serif, system-ui, sans-serif;
+}
+
+body {
+  background-color: var(--color-paper);
+  color: var(--color-ink);
+  font-family: var(--font-sans);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  overflow-x: hidden;
+  /* Computational Grid */
+  background-image: 
+    linear-gradient(rgba(0, 229, 255, 0.05) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(0, 229, 255, 0.05) 1px, transparent 1px);
+  background-size: 40px 40px;
+  background-position: center top;
+  background-attachment: fixed;
+}
+
+/* Cyber Scrollbar */
+::-webkit-scrollbar {
+  width: 4px;
+  height: 4px;
+}
+::-webkit-scrollbar-track {
+  background: var(--color-paper); 
+}
+::-webkit-scrollbar-thumb {
+  background: var(--color-border); 
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--color-accent); 
+}
+
+.editorial-card {
+  background: var(--color-surface);
+  border: 1px solid #808080; /* Medium Grey */
+  box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.02);
+  transition: all 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+  transform-origin: center center;
+}
+
+.editorial-card:hover {
+  box-shadow: 0 0 50px rgba(0, 229, 255, 0.1), inset 0 0 30px rgba(0, 229, 255, 0.05);
+  border-color: rgba(0, 229, 255, 0.4);
+  transform: scale(1.2) translateY(-2px);
+  opacity: 1 !important;
+  z-index: 50;
+}
+
+::selection { background: var(--color-accent); color: #000; }
+
+.neon-glow-hover {
+  transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+  cursor: default;
+}
+.neon-glow-hover span {
+  transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.neon-glow-hover:hover {
+  color: #ffffff !important;
+  text-shadow: 
+    0 0 10px rgba(0, 229, 255, 1),
+    0 0 20px rgba(0, 229, 255, 0.8),
+    0 0 40px rgba(0, 229, 255, 0.5),
+    0 0 60px rgba(0, 229, 255, 0.3);
+}
+
+.neon-glow-hover:hover span {
+  color: #ffffff !important;
+}
+
+@keyframes slide-marquee {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+
+.group:hover .marquee-on-hover {
+  animation: slide-marquee 4s linear infinite;
+}
+
+.mask-edges {
+  -webkit-mask-image: linear-gradient(to right, transparent, black 16px, black calc(100% - 16px), transparent);
+  mask-image: linear-gradient(to right, transparent, black 16px, black calc(100% - 16px), transparent);
+}
